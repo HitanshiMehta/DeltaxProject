@@ -1,0 +1,73 @@
+﻿@model IEnumerable<DeltaxIMDB.Models.ActorModel>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Actor_Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Actor_Photo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Actor_Sex)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Actor_DOB)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Actor_Bio)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Actor_Height)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Actor_Birth_Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Actor_Birth_State)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Actor_Name)
+            </td>
+            <td>
+                <img src="/Image/@Html.DisplayFor(modelItem => item.Actor_Photo)" style="height:150px;width:150px;" />
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Actor_Sex)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Actor_Bio)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Actor_Height)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Actor_Birth_Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Actor_Birth_State)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.Actor_Id }) |
+                @Html.ActionLink("Details", "Details", new { id = item.Actor_Id }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.Actor_Id })
+            </td>
+        </tr>
+    }
+
+</table>

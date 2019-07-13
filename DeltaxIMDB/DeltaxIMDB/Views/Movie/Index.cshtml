@@ -1,0 +1,66 @@
+﻿@model IEnumerable<DeltaxIMDB.Models.MovieModel>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")|
+    @Html.ActionLink("Add Actor", "AddActor")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.ProducerList.Producer_Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Movie_Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Movie_Release_Year)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Movie_Plot)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Movie_Poster)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Movie_Rating)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                <a href="@Url.Action("Details", "Producer", new { id = item.ProducerList.Producer_Id })"><span style="font-weight:bold;">@Html.DisplayFor(modelItem => item.ProducerList.Producer_Name)</span></a>
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Movie_Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Movie_Release_Year)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Movie_Plot)
+            </td>
+            <td>
+                <img src="/Image/@Html.DisplayFor(modelItem => item.Movie_Poster)" style="height:150px;width:150px;" />
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Movie_Rating)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.Movie_Id }) |
+                @Html.ActionLink("Details", "Details", new { id = item.Movie_Id }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.Movie_Id })
+
+            </td>
+        </tr>
+    }
+
+</table>

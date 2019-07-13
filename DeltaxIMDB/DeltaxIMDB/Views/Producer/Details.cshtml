@@ -1,0 +1,58 @@
+﻿@model DeltaxIMDB.Models.ProducerModel
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>ProducerModel</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Producer_Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Producer_Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Producer_Photo)
+        </dt>
+
+        <dd>
+            <img src="/Image/@Html.DisplayFor(model => model.Producer_Photo)" style="height:150px;width:150px;" />
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Producer_Sex)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Producer_Sex)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Producer_DOB)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Producer_DOB)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Producer_Bio)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Producer_Bio)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Producer_Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

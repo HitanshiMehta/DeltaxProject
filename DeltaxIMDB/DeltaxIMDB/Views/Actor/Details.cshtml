@@ -1,0 +1,80 @@
+﻿@model DeltaxIMDB.Models.ActorModel
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>ActorModel</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Actor_Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Actor_Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Actor_Photo)
+        </dt>
+
+        <dd>
+            <img src="/Image/@Html.DisplayFor(model => model.Actor_Photo)" style="height:150px;width:150px;" />
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Actor_Sex)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Actor_Sex)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Actor_DOB)
+        </dt>
+
+
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Actor_Bio)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Actor_Bio)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Actor_Height)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Actor_Height)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Actor_Birth_Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Actor_Birth_Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Actor_Birth_State)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Actor_Birth_State)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Actor_Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

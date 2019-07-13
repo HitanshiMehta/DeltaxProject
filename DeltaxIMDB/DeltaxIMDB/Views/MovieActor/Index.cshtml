@@ -1,0 +1,39 @@
+﻿@model IEnumerable<DeltaxIMDB.Models.MovieActorModel>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    <a href="@Url.Action("AddActor", "Movie")"><span style="font-weight:bold;">Add Actor</span></a>
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.ActorList.Actor_Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MovieList.Movie_Name)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                <a href="@Url.Action("Details", "Actor", new { id = item.ActorList.Actor_Id })"><span style="font-weight:bold;">@Html.DisplayFor(modelItem => item.ActorList.Actor_Name)</span></a>
+            </td>
+            <td>
+                <a href="@Url.Action("Details", "Movie", new { id = item.MovieList.Movie_Id })"><span style="font-weight:bold;">@Html.DisplayFor(modelItem => item.MovieList.Movie_Name)</span></a>
+
+            </td>
+            <td>
+                @Html.ActionLink("Delete", "Delete", new { id = item.Movie_Actor_Id })
+            </td>
+        </tr>
+    }
+
+</table>

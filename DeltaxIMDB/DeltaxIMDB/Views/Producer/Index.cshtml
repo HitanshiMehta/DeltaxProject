@@ -1,0 +1,61 @@
+﻿@using System.Linq
+@using System.Data.Entity
+@model IEnumerable<DeltaxIMDB.Models.ProducerModel>
+
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Producer_Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Producer_Photo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Producer_Sex)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Producer_DOB)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Producer_Bio)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Producer_Name)
+        </td>
+        <td>
+            <img src="/Image/@Html.DisplayFor(modelItem => item.Producer_Photo)" style="height:150px;width:150px;" />
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Producer_Sex)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Producer_DOB)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Producer_Bio)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id = item.Producer_Id }) |
+            @Html.ActionLink("Details", "Details", new { id = item.Producer_Id }) |
+            @Html.ActionLink("Delete", "Delete", new { id = item.Producer_Id })
+        </td>
+    </tr>
+    }
+
+</table>
